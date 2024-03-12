@@ -1,142 +1,130 @@
-{pkgs, config, ... }:
 {
-
-  programs.neovim = 
-
-  let
+  pkgs,
+  config,
+  ...
+}: {
+  programs.neovim = let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  in
-
-  {
+  in {
     enable = true;
 
-  plugins = with pkgs.vimPlugins; [
+    plugins = with pkgs.vimPlugins; [
+      plenary-nvim
 
-	{
-	plugin = lualine-nvim;
-	config = toLuaFile ./nvim/plugin/lualine.lua;
-	}
+      {
+        plugin = lualine-nvim;
+        config = toLuaFile ./nvim/plugin/lualine.lua;
+      }
 
-	{
-	plugin = dracula-nvim;
-	config = toLuaFile ./nvim/plugin/colorscheme.lua;
-	}
+      {
+        plugin = dracula-nvim;
+        config = toLuaFile ./nvim/plugin/colorscheme.lua;
+      }
 
-	{
-	plugin = lspkind-nvim;
-	}
+      lspkind-nvim
 
-	{
-	plugin = gitsigns-nvim;
-	config = toLuaFile ./nvim/plugin/autopairs.lua;
-	}
+      {
+        plugin = gitsigns-nvim;
+        config = toLuaFile ./nvim/plugin/autopairs.lua;
+      }
 
-	{
-	plugin = cmp-buffer;
-	}
+      cmp-buffer
+      cmp-path
+      cmp_luasnip
+      cmp-nvim-lsp
+      luasnip
+      friendly-snippets
 
-	{
-	plugin = cmp-path;
-	}
+      {
+        plugin = nvim-cmp;
+        config = toLuaFile ./nvim/plugin/nvim-cmp.lua;
+      }
 
-	{
-	plugin = cmp_luasnip;
-	}
+      nvim-ts-autotag
 
-	{
-	plugin = luasnip;
-	}
+      {
+        plugin = nvim-autopairs;
+        config = toLuaFile ./nvim/plugin/autopairs.lua;
+      }
 
-	{
-	plugin = friendly-snippets;
-	}
+      {
+        plugin = comment-nvim;
+        config = toLuaFile ./nvim/plugin/comment.lua;
+      }
 
-	{
-	plugin = nvim-cmp;
-	config = toLuaFile ./nvim/plugin/nvim-cmp.lua;
-	}
+      {
+        plugin = telescope-nvim;
+        config = toLuaFile ./nvim/plugin/telescope.lua;
+      }
 
-	{
-	plugin = nvim-ts-autotag;
-	}
+      telescope-fzf-native-nvim
 
-	{
-	plugin = nvim-autopairs;
-	config = toLuaFile ./nvim/plugin/autopairs.lua;
-	}
+      {
+        plugin = nvim-treesitter.withPlugins (p: [
+          p.tree-sitter-nix
+          p.tree-sitter-vim
+          p.tree-sitter-bash
+          p.tree-sitter-lua
+          p.tree-sitter-python
+          p.tree-sitter-json
+        ]);
+        config = toLuaFile ./nvim/plugin/treesitter.lua;
+      }
 
-	{
-	plugin = comment-nvim;
-	config = toLuaFile ./nvim/plugin/comment.lua;
-	}
+      {
+        plugin = toggleterm-nvim;
+        config = toLuaFile ./nvim/plugin/toggleterm.lua;
+      }
 
-	{
-	plugin = telescope-nvim;
-	config = toLuaFile ./nvim/plugin/telescope.lua;
-	}
+      nvim-web-devicons
+      nvim-surround
+      # markdown-preview-nvim
+      copilot-vim
+      dressing-nvim
+      vim-tmux-navigator
 
-	{
-	plugin = telescope-fzf-native-nvim;
-	}
+      {
+        plugin = nvim-lspconfig;
+        config = toLuaFile ./nvim/plugin/lspconfig.lua;
+      }
 
-	{
-	plugin = (nvim-treesitter.withPlugins (p: [
-	  p.tree-sitter-nix
-	  p.tree-sitter-vim
-	  p.tree-sitter-bash
-	  p.tree-sitter-lua
-	  p.tree-sitter-python
-	  p.tree-sitter-json
-	]));
-	config = toLuaFile ./nvim/plugin/treesitter.lua;
-	}
+      {
+        plugin = null-ls-nvim;
+        config = toLuaFile ./nvim/plugin/null-ls.lua;
+      }
 
-	{
-	plugin = toggleterm-nvim;
-	config = toLuaFile ./nvim/plugin/toggleterm.lua;
-	}
+      {
+        plugin = lspsaga-nvim;
+        config = toLuaFile ./nvim/plugin/lspsaga.lua;
+      }
+    ];
 
-	
-	{
-	plugin = nvim-web-devicons;
-	}
+    # lsp
+    extraPackages = with pkgs; [
+      lua-language-server
+      selene
+      stylua
 
-	{
-	plugin = nvim-surround;
-	}
+      nodePackages.pyright
+      python311Packages.flake8
+      black
+      isort
 
-	{
-	plugin = dressing-nvim;
-	}
+      nil
+      deadnix
+      alejandra
 
-	{
-	plugin = vim-tmux-navigator;
-	}
-
-	{
-	plugin = copilot-vim;
-	}
-
-	{
-	plugin = markdown-preview-nvim;
-	}
-
-  ];
-
-
-
-
+      # for clipboard
+      xclip
+      wl-clipboard
+    ];
 
     extraLuaConfig = ''
 
-    ${builtins.readFile ./nvim/options.lua}
-    ${builtins.readFile ./nvim/keymaps.lua}
+      ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/keymaps.lua}
 
     '';
-
-};
+  };
 }
-
-
-

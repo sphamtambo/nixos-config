@@ -10,7 +10,8 @@ opt.undofile = true
 opt.history = 10000
 
 -- use linux system clipboard
-opt.clipboard = "unnamedplus,unnamed"
+-- opt.clipboard = "unnamedplus,unnamed"
+opt.clipboard = "unnamedplus"
 
 -- mouse
 opt.mouse = "a"

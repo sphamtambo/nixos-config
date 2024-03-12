@@ -50,8 +50,6 @@ imports = [
       python3Full
       shutter
       zathura
-      nil
-	  nixpkgs-fmt
       less
       tree
 	  htop
