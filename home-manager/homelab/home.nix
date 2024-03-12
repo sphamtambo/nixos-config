@@ -7,15 +7,21 @@
   config,
   pkgs,
   ...
-}: {
+}: 
+
+{
+
+imports = [
+./nvim.nix
+];
+
+
   home = {
     homeDirectory = "/home/sphalo";
     username = "sphalo";
     stateVersion = "23.11";
 
     packages = with pkgs; [
-      vim
-      neovim
       zsh
       ranger
       wget
@@ -39,24 +45,20 @@
       zsh-syntax-highlighting
       z-lua
       gcc
-      clang_12
+      # clang_12
       nodejs
       python3Full
-      python311Packages.pip
       shutter
       zathura
       nil
 	  nixpkgs-fmt
       less
       tree
+	  htop
     ];
 
   };
 
   programs.home-manager.enable = true;
-
   programs.git.enable = true;
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
 }

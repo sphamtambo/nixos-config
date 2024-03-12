@@ -1,6 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-{
+  {
   inputs,
   outputs,
   lib,
@@ -48,7 +48,7 @@
   };
 
   networking = {
-    hostName = "sphalo-desktop";
+    hostName = "homelab";
     networkmanager.enable = true;
     enableIPv6 = false;
     firewall.enable = false;
@@ -67,16 +67,16 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_ZA.UTF-8";
 
-  serices = {
+  services = {
 	xserver = {
 	  # Enable the X11 windowing system.
 	enable = true;
 	  # Enable the GNOME Desktop Environment.
 	displayManager.gdm.enable = true;
-	displayManager.gnome.enable = true;
+	desktopManager.gnome.enable = true;
 	  # Configure keymap in X11
-	layout = "za";
-	xkbVariant = "";
+	xkb.layout = "za";
+	xkb.variant = "";
 	};
 	  # Enable CUPS to print documents.
 	printing = {
@@ -117,6 +117,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
 	vim
+	htop
+	git
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
