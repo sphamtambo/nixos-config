@@ -1,6 +1,6 @@
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
-  {
+{
   inputs,
   outputs,
   lib,
@@ -56,9 +56,9 @@
 
   # Bootloader.
   boot.loader.grub = {
-	enable = true;
-	device = "/dev/sdc";
-	useOSProber = true;
+    enable = true;
+    device = "/dev/sdc";
+    useOSProber = true;
   };
 
   # Set your time zone.
@@ -68,20 +68,20 @@
   i18n.defaultLocale = "en_ZA.UTF-8";
 
   services = {
-	xserver = {
-	  # Enable the X11 windowing system.
-	enable = true;
-	  # Enable the GNOME Desktop Environment.
-	displayManager.gdm.enable = true;
-	desktopManager.gnome.enable = true;
-	  # Configure keymap in X11
-	xkb.layout = "za";
-	xkb.variant = "";
-	};
-	  # Enable CUPS to print documents.
-	printing = {
-		enable = true;
-	};
+    xserver = {
+      # Enable the X11 windowing system.
+      enable = true;
+      # Enable the GNOME Desktop Environment.
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
+      # Configure keymap in X11
+      xkb.layout = "za";
+      xkb.variant = "";
+    };
+    # Enable CUPS to print documents.
+    printing = {
+      enable = true;
+    };
   };
 
   # Enable bluetooth
@@ -90,7 +90,7 @@
   # Enable zsh
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh ];
+  environment.shells = with pkgs; [zsh];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -101,24 +101,24 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-};
+  };
 
   users.users.sphalo = {
     isNormalUser = true;
     description = "Sphalo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-    firefox
-    #  thunderbird
+      firefox
+      #  thunderbird
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	vim
-	htop
-	git
+    vim
+    htop
+    git
   ];
 
   # This setups a SSH server. Very important if you're setting up a headless system.
@@ -136,4 +136,3 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 }
-
