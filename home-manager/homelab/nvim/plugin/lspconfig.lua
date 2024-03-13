@@ -16,11 +16,10 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 local keymap = vim.keymap -- for conciseness
 
 -- function to be executed when attaching to a buffer
-local function on_attach(client, bufnr)
-end
+local function on_attach(client, bufnr) end
 
 -- configure python server
-lspconfig["pyright"].setup({
+lspconfig["pylsp"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -29,24 +28,29 @@ lspconfig["pyright"].setup({
 lspconfig["nil_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
+	settings = {
+		nix = {
+			autoArchive = true,
+		},
+	},
 })
 
 -- configure type script server
 lspconfig["tsserver"].setup({
 	capabilities = capabilities,
-	-- on_attach = on_attach,
+	on_attach = on_attach,
 })
 
 -- configure html server
 lspconfig["html"].setup({
 	capabilities = capabilities,
-	-- on_attach = on_attach,
+	on_attach = on_attach,
 })
 
 -- configure css server
 lspconfig["cssls"].setup({
 	capabilities = capabilities,
-	-- on_attach = on_attach,
+	on_attach = on_attach,
 })
 
 -- configure json server
@@ -90,7 +94,7 @@ lspconfig["lua_ls"].setup({
 
 -- configure C++ server
 lspconfig["clangd"].setup({
-	-- on_attach = on_attach,
+	on_attach = on_attach,
 	capabilities = {
 		offsetEncoding = "utf-32",
 		textDocument = {

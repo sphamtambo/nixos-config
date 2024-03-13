@@ -1,18 +1,16 @@
 {
+  description = "NixOS and Standaline home-manager config";
 
-description = "NixOS and Standaline home-manager config";
+  inputs = {
+    # Nixpkgs
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
-inputs ={ 
-	# Nixpkgs
-	nixpkgs.url = "nixpkgs/nixos-unstable";
-	      
-	# Home manager
-	home-manager = {                                                      
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
-
-};
+    # Home manager
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
   outputs = {
     self,
     nixpkgs,
@@ -31,7 +29,7 @@ inputs ={
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
-in {
+  in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});

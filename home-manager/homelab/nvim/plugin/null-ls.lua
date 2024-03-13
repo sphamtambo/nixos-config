@@ -15,23 +15,35 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	-- setup formatters & linters
 	sources = {
+		-- python
 		formatting.black, -- python code formatter
 		formatting.isort, -- python style linter for import statements
-		formatting.alejandra, -- python style linter for import statements
-		-- diagnostics.mypy, --python type checker
-		formatting.stylua, -- lua code formatter
 		diagnostics.flake8, -- python linter, error, complexity analysis
+		-- diagnostics.mypy, --python type checker
+
+		-- nix
+		formatting.alejandra, --  nix code formatter
+		diagnostics.deadnix, -- nix type checker
+
+		--lua
+		formatting.stylua, -- lua code formatter
 		diagnostics.selene, -- lua linter
-		diagnostics.deadnix, -- lua linter
-		-- formatting.clang_format, -- c/c++ formatter
-		-- formatting.prettier, -- js/ts formatter
+
+		--cpp
+		formatting.clang_format, -- c/c++ formatter
+		--run the following command to select Google style and formant on save
+		--~/.local/share/nvim/mason/bin/clang-format --style Google --dump-config > .clang-format
+
+		-- js/ts
+		formatting.prettier, -- js/ts formatter
+		diagnostics.eslint_d, -- js/ts linter
+
 		-- diagnostics.eslint_d.with({ -- js/ts linter
 		-- 	condition = function(utils)
 		-- 		return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
 		-- 	end,
 		-- }),
-		--run the following command to select Google style and formant on save
-		--~/.local/share/nvim/mason/bin/clang-format --style Google --dump-config > .clang-format
+		--
 		-- null_ls.builtins.code_actions, -- code actions
 		-- null_ls.builtins.gitsigns, -- gitsigns
 	},

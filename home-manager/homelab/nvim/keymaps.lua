@@ -45,6 +45,9 @@ keymap.set("n", "<leader>rc", ":%s///gc<Left><Left><Left>", opts) -- c to confir
 keymap.set("v", "<leader>r", ":s///g<Left><Left>", opts)
 keymap.set("v", "<leader>rc", ":s///gc<Left><Left><Left>", opts) -- c to confirm individually
 
+-- move python imports to top of the file
+keymap.set("n", "<leader>o", ":g/^ *import /m1", opts) -- top of the file
+
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x', opts)
 

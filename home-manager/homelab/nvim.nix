@@ -1,16 +1,13 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   programs.neovim = let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
   in {
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      plenary-nvim
+      {
+        plugin = plenary-nvim;
+      }
 
       {
         plugin = lualine-nvim;
@@ -22,26 +19,47 @@
         config = toLuaFile ./nvim/plugin/colorscheme.lua;
       }
 
-      lspkind-nvim
+      {
+        plugin = lspkind-nvim;
+      }
 
       {
         plugin = gitsigns-nvim;
         config = toLuaFile ./nvim/plugin/autopairs.lua;
       }
 
-      cmp-buffer
-      cmp-path
-      cmp_luasnip
-      cmp-nvim-lsp
-      luasnip
-      friendly-snippets
+      {
+        plugin = cmp-buffer;
+      }
+
+      {
+        plugin = cmp-path;
+      }
+
+      {
+        plugin = cmp_luasnip;
+      }
+
+      {
+        plugin = cmp-nvim-lsp;
+      }
+
+      {
+        plugin = luasnip;
+      }
+
+      {
+        plugin = friendly-snippets;
+      }
 
       {
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/nvim-cmp.lua;
       }
 
-      nvim-ts-autotag
+      {
+        plugin = nvim-ts-autotag;
+      }
 
       {
         plugin = nvim-autopairs;
@@ -58,7 +76,9 @@
         config = toLuaFile ./nvim/plugin/telescope.lua;
       }
 
-      telescope-fzf-native-nvim
+      {
+        plugin = telescope-fzf-native-nvim;
+      }
 
       {
         plugin = nvim-treesitter.withPlugins (p: [
@@ -77,12 +97,29 @@
         config = toLuaFile ./nvim/plugin/toggleterm.lua;
       }
 
-      nvim-web-devicons
-      nvim-surround
-      # markdown-preview-nvim
-      copilot-vim
-      dressing-nvim
-      vim-tmux-navigator
+      {
+        plugin = nvim-web-devicons;
+      }
+
+      {
+        plugin = nvim-surround;
+      }
+
+      {
+        plugin = markdown-preview-nvim;
+      }
+
+      {
+        plugin = copilot-vim;
+      }
+
+      {
+        plugin = dressing-nvim;
+      }
+
+      {
+        plugin = vim-tmux-navigator;
+      }
 
       {
         plugin = nvim-lspconfig;
@@ -100,22 +137,31 @@
       }
     ];
 
-    # lsp
     extraPackages = with pkgs; [
+      # Language servers and tools for Lua
       lua-language-server
       selene
       stylua
 
-      nodePackages.pyright
+      # Language servers and tools for Python
+      python311Packages.python-lsp-server
       python311Packages.flake8
       black
       isort
 
+      # Language servers and tools for C++ (clangd, clang-format,clang++, ..)
+      llvmPackages_17.clang-unwrapped
+
+      # Language servers and tools for js/ts
+      nodePackages.prettier
+      eslint_d
+
+      # Language server and tools for Nix
       nil
       deadnix
       alejandra
 
-      # for clipboard
+      # Clipboard managers
       xclip
       wl-clipboard
     ];

@@ -7,14 +7,10 @@
   config,
   pkgs,
   ...
-}: 
-
-{
-
-imports = [
-./nvim.nix
-];
-
+}: {
+  imports = [
+    ./nvim.nix
+  ];
 
   home = {
     homeDirectory = "/home/sphalo";
@@ -44,17 +40,15 @@ imports = [
       zsh-autosuggestions
       zsh-syntax-highlighting
       z-lua
-      gcc
-      # clang_12
+      # gcc
       nodejs
-      python3Full
+      python313
       shutter
       zathura
       less
       tree
-	  htop
+      htop
     ];
-
   };
 
   programs.home-manager.enable = true;
