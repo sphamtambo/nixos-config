@@ -9,7 +9,7 @@
   ...
 }: {
   imports = [
-    ./nvim.nix
+    ./programs/default.nix
   ];
 
   home = {
@@ -18,17 +18,13 @@
     stateVersion = "23.11";
 
     packages = with pkgs; [
-      zsh
       ranger
       wget
       neofetch
-      git
-      alacritty
       bat
       stow
       lsd
       eza
-      fzf
       ripgrep
       lazygit
       tmux
@@ -48,9 +44,17 @@
       less
       tree
       htop
+      (nerdfonts.override {
+        fonts = [
+          "FiraCode"
+          "DroidSansMono"
+          "Meslo"
+          "Hack"
+          # "JetBrainsMono Nerd Font"
+        ];
+      })
     ];
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 }

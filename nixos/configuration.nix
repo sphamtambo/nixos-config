@@ -42,7 +42,7 @@
 
   nix.settings = {
     # Enable flakes and new 'nix' command
-    experimental-features = "nix-command flakes";
+    experimental-features = ["nix-command" " flakes"];
     # Deduplicate and optimize nix store
     auto-optimise-store = true;
   };
@@ -132,6 +132,27 @@
       PasswordAuthentication = false;
     };
   };
+
+  # fonts = {
+  #   packages = with pkgs; [
+  #     noto-fonts
+  #     noto-fonts-cjk
+  #     noto-fonts-emoji
+  #     font-awesome
+  #     source-han-sans
+  #     source-han-sans-japanese
+  #     source-han-serif-japanese
+  #     (nerdfonts.override {fonts = ["Meslo"];})
+  #   ];
+  #   fontconfig = {
+  #     enable = true;
+  #     defaultFonts = {
+  #       monospace = ["Meslo LG M Regular Nerd Font Complete Mono"];
+  #       serif = ["Noto Serif" "Source Han Serif"];
+  #       sansSerif = ["Noto Sans" "Source Han Sans"];
+  #     };
+  #   };
+  # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
