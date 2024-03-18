@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
 
@@ -7,10 +11,13 @@
       enable = true;
     };
 
-    # # Enable autosuggestions
-    # autosuggestions = {
-    #   enable = true;
-    # };
+    enableCompletion = true;
+
+    # Enable autosuggestions
+    enableAutosuggestions = true;
+    autosuggestions = {
+      highlightStyle = "fg=cyan";
+    };
 
     # Define shell aliases
     shellAliases = {
@@ -44,16 +51,6 @@
       egrep = "egrep --color=auto";
 
       open = "xdg-open";
-
-      ga = "git add";
-      gc = "git commit";
-      gco = "git checkout";
-      gcp = "git cherry-pick";
-      gdiff = "git diff";
-      gl = "git prettylog";
-      gp = "git push";
-      gs = "git status";
-      gt = "git tag";
     };
   };
 }

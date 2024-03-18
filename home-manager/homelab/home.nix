@@ -27,15 +27,12 @@
       eza
       ripgrep
       lazygit
-      tmux
       unzip
       zip
       docker
       docker-compose
-      spaceship-prompt
       zsh-autosuggestions
       zsh-syntax-highlighting
-      z-lua
       # gcc
       nodejs
       python313

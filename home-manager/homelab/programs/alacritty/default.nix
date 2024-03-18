@@ -8,7 +8,7 @@
           family = "Fira Code Nerd Font";
           style = "Medium";
         };
-        size = 8;
+        size = 10;
       };
 
       # Colors (dracula theme)
@@ -46,8 +46,8 @@
       };
 
       cursor = {
-        vi_mode_style = "Underline";
-        style = "Block"; # Set cursor shape to block
+        # vi_mode_style = "Underline";
+        # style = "Block"; # Set cursor shape to block
         blink = true; # Set blinking always
       };
 
