@@ -5,9 +5,7 @@
 }: {
   programs.zsh = {
     enable = true;
-    syntaxHighlighting = {
-      enable = true;
-    };
+    syntaxHighlighting.enable = true;
     enableCompletion = true;
     enableAutosuggestions = true;
 
@@ -66,6 +64,38 @@
       open = "xdg-open";
     };
 
+    initExtra = ''
+      # History settings
+      		HISTSIZE=1000
+      		SAVEHIST=1000
+      		HISTFILE=~/.zsh_history
+      		setopt INC_APPEND_HISTORY    # Immediately append commands to history file.
+      		setopt HIST_IGNORE_ALL_DUPS  # Never add duplicate entries.
+      		setopt HIST_IGNORE_SPACE     # Ignore commands that start with a space.
+      		setopt HIST_REDUCE_BLANKS    # Remove unnecessary blank lines.
+
+      # Use modern completion system
+      		autoload -Uz compinit
+      		compinit
+      		_comp_options+=(globdots)    # include hidden files
+
+      # Use vi keybindings
+      		bindkey -v
+      		bindkey "^F" vi-cmd-mode
+
+      # handy keybindings
+      		bindkey "^A" beginning-of-line
+      		bindkey "^E" end-of-line
+      		bindkey "^B" backward-word
+      		bindkey "^D" delete-word
+      		bindkey "^K" kill-line
+      		bindkey "^R" history-incremental-search-backward
+      		bindkey "^P" history-search-backward
+      		bindkey "^Y" accept-and-hold
+      		bindkey "^N" insert-last-word
+      		bindkey "^Q" push-line-or-edit
+      		bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+    '';
     plugins = [
       {
         name = "zsh-syntax-highlighting";

@@ -135,6 +135,18 @@
         plugin = lspsaga-nvim;
         config = toLuaFile ./plugin/lspsaga.lua;
       }
+
+      {
+        plugin = nui-nvim;
+      }
+      {
+        plugin = image-nvim;
+      }
+
+      {
+        plugin = neo-tree-nvim;
+        config = toLuaFile ./plugin/neo-tree.lua;
+      }
     ];
 
     extraPackages = with pkgs; [
@@ -160,10 +172,6 @@
       nil
       deadnix
       alejandra
-
-      # Clipboard managers
-      xclip
-      wl-clipboard
     ];
 
     extraLuaConfig = ''

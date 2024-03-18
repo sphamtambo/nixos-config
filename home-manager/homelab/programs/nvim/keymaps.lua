@@ -92,7 +92,8 @@ keymap.set("n", "<leader>py", "<cmd>lua _PYTHON_TOGGLE()<CR>", { noremap = true,
 keymap.set("n", "<leader>ht", "<cmd>lua _HTOP_TOGGLE()<CR>", { noremap = true, silent = true }, opts) -- create a new htop terminal
 
 -- file explorer
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle file explorer (tree sitter)
+-- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- toggle file explorer (nvim tree)
+keymap.set("n", "<leader>e", ":Neotree toggle<CR>", opts) -- toggle file explorer (neo tree)
 keymap.set("n", "-", " <CMD>Oil<CR>", opts) -- open parent dir (oil)
 
 -- neogen

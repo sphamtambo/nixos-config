@@ -41,6 +41,9 @@
       less
       tree
       htop
+      # Clipboard managers
+      xclip
+      wl-clipboard
       (nerdfonts.override {
         fonts = [
           "FiraCode"
@@ -54,5 +57,4 @@
   };
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
 }
