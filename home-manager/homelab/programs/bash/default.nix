@@ -32,15 +32,27 @@
       egrep = "egrep --color=auto";
       open = "xdg-open";
 
+      # Git aliases
       ga = "git add";
       gc = "git commit";
-      gco = "git checkout";
-      gcp = "git cherry-pick";
-      gdiff = "git diff";
-      gl = "git prettylog";
-      gp = "git push";
+      gcm = "git commit -m";
       gs = "git status";
-      gt = "git tag";
+      gd = "git diff";
+      gl = "git log";
+      gb = "git branch";
+      gco = "git checkout";
+      gm = "git merge";
+      gcl = "git clone";
+      gpull = "git pull";
+      gpush = "git push";
+      grb = "git rebase";
+      gtag = "git tag";
+      gfetch = "git fetch";
+      gch = "git checkout";
+      gclean = "git clean -fd";
+      greset = "git reset";
+      gsh = "git show";
+      gstash = "git stash";
     };
   };
 }

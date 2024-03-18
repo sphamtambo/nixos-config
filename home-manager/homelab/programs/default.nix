@@ -9,7 +9,7 @@
     ./zsh/default.nix
     ./git/default.nix
     ./startship/default.nix
-    ./zoxide/default.nix
+    # ./zoxide/default.nix
     ./tmux/default.nix
   ];
 }
