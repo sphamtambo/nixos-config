@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+../../scripts/change_theme.sh & disown
+
+./scripts/self close bar-menu

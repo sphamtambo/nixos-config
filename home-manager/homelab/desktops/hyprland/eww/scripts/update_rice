@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+alacritty -e ../../manage/update.sh & disown
+
+./scripts/self close bar-menu

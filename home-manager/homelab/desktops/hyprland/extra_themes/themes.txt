@@ -1,0 +1,3 @@
+$Gruvbox Bubbles Dark (Extra, Built-In) -> ./gruvbox_dark_bubbles;
+$Everforest Medium Dark Classic (Extra, Built-In) -> ./everforest_medium_dark_classic;
+$Nord Dark Extra (Extra, Built-In) -> ./nord_dark_extra;
