@@ -1,0 +1,3 @@
+{...}: {
+  imports = [(import ./telescope.nix)];
+}

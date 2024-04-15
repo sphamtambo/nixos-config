@@ -1,0 +1,3 @@
+{...}: {
+  imports = [(import ./luasnip.nix)];
+}
