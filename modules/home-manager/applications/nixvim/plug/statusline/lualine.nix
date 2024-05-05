@@ -8,7 +8,7 @@
       disabledFiletypes = {
         statusline = ["dashboard" "alpha"];
       };
-      theme = "auto";
+      theme = "dracula";
       sectionSeparators.left = "";
       sectionSeparators.right = "";
       componentSeparators.left = "";

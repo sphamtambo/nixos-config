@@ -4,6 +4,7 @@
     config = {
       pager = "less -FR";
       theme = "Dracula";
+      colort = "always";
     };
   };
 }

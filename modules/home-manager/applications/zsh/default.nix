@@ -11,8 +11,8 @@
 
     shellAliases = {
       sd = "cd $(find * -type d | fzf --reverse)";
-      fzfp = "fzf --reverse --preview 'bat {}'";
-      fzfv = "fzf --reverse | xargs nvim";
+      fp = "fzf --reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'";
+      fv = "fzf --reverse | xargs nvim";
 
       cat = "bat";
       ls = "lsd";
@@ -89,8 +89,8 @@
       		bindkey "^B" backward-word
       		bindkey "^D" delete-word
       		bindkey "^K" kill-line
-      		bindkey "^R" history-incremental-search-backward
-      		bindkey "^P" history-search-backward
+      		# bindkey "^R" history-incremental-search-backward
+      		# bindkey "^P" history-search-backward
       		bindkey "^Y" accept-and-hold
       		bindkey "^N" insert-last-word
       		bindkey "^Q" push-line-or-edit

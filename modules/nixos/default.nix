@@ -15,8 +15,8 @@
     ++ [(import ./ssh.nix)]
     ++ [(import ./cloudflare-warp.nix)]
     ++ [(import ./bluetooth.nix)]
+    ++ [(import ./virtualization.nix)]
     ++ [(import ./../home-manager/programming_languages/mysql)]
     ++ [(import ../../hosts/nixos/hardware-configuration.nix)];
   # ++ [ (import ./steam.nix) ]
-  # ++ [ (import ./virtualization.nix) ]
 }

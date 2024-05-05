@@ -20,6 +20,7 @@
     tree
     htop
     scrcpy
+    libreoffice
 
     # cloudflare-warp
     # cloudflared
