@@ -11,7 +11,7 @@
           end
         end
       '';
-      openMapping = "[[<c-\>]]";
+      # openMapping = "[[<c-\>]]";
       hideNumbers = true;
       shadeTerminals = true;
       startInInsert = true;
