@@ -15,6 +15,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       twemoji-color-font
+      terminus_font
       (nerdfonts.override {
         fonts = [
           "FiraCode"
@@ -28,8 +29,14 @@
       })
     ];
     fontconfig = {
+      hinting.autohint = true;
+      antialias = true;
+      allowBitmaps = true;
+      useEmbeddedBitmaps = true;
       defaultFonts = {
-        monospace = ["JetBrainsMono Nerd Font"];
+        monospace = ["Source Code Pro"];
+        sansSerif = ["Roboto"];
+        serif = ["Source Serif Pro"];
       };
     };
   };
