@@ -16,6 +16,7 @@
       noto-fonts-emoji
       twemoji-color-font
       terminus_font
+      nerd-font-patcher
       (nerdfonts.override {
         fonts = [
           "FiraCode"

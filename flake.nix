@@ -20,10 +20,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
+    nixvimed = {
       url = "github:sphamtambo/nixvim";
-      # url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -32,7 +30,7 @@
     nixpkgs,
     home-manager,
     hyprland,
-    nixvim,
+    nixvimed,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -62,7 +60,7 @@
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
-        specialArgs = {inherit self nixvim system hostname username inputs outputs;};
+        specialArgs = {inherit self nixvimed system hostname username inputs outputs;};
         modules = [
           ./hosts/nixos/configuration.nix
           hyprland.nixosModules.default

@@ -4,6 +4,6 @@
   ...
 }: {
   home.packages = with pkgs; [
-    inputs.nixvim.packages.${system}.default
+    inputs.nixvimed.packages.${system}.default
   ];
 }
