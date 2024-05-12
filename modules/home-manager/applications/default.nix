@@ -11,7 +11,7 @@
     ++ [(import ./zsh)]
     ++ [(import ./bash)]
     ++ [(import ./fzf)]
-    ++ [(import ./ranger)]
+    # ++ [(import ./ranger)]
     ++ [(import ./git)]
     # ++ [(import ./nvim)]
     ++ [(import ./nixvim)]
@@ -19,5 +19,7 @@
     ++ [(import ./tmux)]
     # ++ [(import ./gaming)]
     ++ [(import ./dbeaver)]
+    ++ [(import ./yazi)]
+    ++ [(import ./zathura)]
     ++ [(import ./zoxide)];
 }

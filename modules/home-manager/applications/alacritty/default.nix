@@ -3,12 +3,26 @@
     enable = true;
 
     settings = {
+      shell = "zsh";
+      live_config_reload = true;
       font = {
-        normal = {
-          family = "Fira Code Nerd Font";
-          style = "Medium";
-        };
         size = 10;
+        normal = {
+          family = "JetBrainsMono NF";
+          style = "Regular";
+        };
+        italic = {
+          family = "JetBrainsMono NF";
+          style = "Italic";
+        };
+        bold_italic = {
+          family = "JetBrainsMono NF";
+          style = "Bold Italic";
+        };
+        bold = {
+          family = "JetBrainsMono NF";
+          style = "Bold";
+        };
       };
 
       # Colors (dracula theme)

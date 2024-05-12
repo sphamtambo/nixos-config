@@ -15,7 +15,6 @@
     docker-compose
     nodejs
     python313
-    zathura
     less
     tree
     htop
