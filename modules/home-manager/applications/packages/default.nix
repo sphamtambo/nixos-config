@@ -21,6 +21,8 @@
     scrcpy
     libreoffice
 
+    pymol
+
     # cloudflare-warp
     # cloudflared
   ];

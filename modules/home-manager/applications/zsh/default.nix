@@ -10,9 +10,9 @@
     autosuggestion.enable = true;
 
     shellAliases = {
-      sd = "cd $(find * -type d | fzf --reverse)";
-      fp = "fzf --reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'";
-      fv = "fzf --reverse | xargs nvim";
+      fd = "cd $(find * -type d | fzf --reverse)";
+      fp = "fzf --height=85% --reverse --preview 'bat --style=numbers --color=always --line-range :500 {}'";
+      fv = "fzf --height=85% --reverse --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs nvim";
 
       cat = "bat";
       ls = "lsd";

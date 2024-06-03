@@ -34,8 +34,9 @@
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     imv # image viewer
     nwg-look
-    cinnamon.nemo-with-extensions # file manager
+    # cinnamon.nemo-with-extensions # file manager
     # xfce.thunar
+    gnome.nautilus
     brightnessctl
     light
 
@@ -88,10 +89,10 @@
       server.enable = true;
     };
 
-    firefox = {
-      enable = true;
-      enableGnomeExtensions = false;
-      package = pkgs.firefox-wayland; # firefox with wayland support
-    };
+    # firefox = {
+    #   enable = true;
+    #   enableGnomeExtensions = false;
+    #   package = pkgs.firefox-wayland; # firefox with wayland support
+    # };
   };
 }

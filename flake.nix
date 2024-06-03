@@ -46,12 +46,17 @@
       config = {
         allowUnfree = true;
       };
+      overlays = [
+        (final: prev: {
+          neovim = inputs.nixvimed.packages.${systems}.default;
+        })
+      ];
     };
   in {
     templates = import ./templates;
     homeManagerModules = import ./modules/home-manager;
     nixosModules = import ./modules/nixos;
-    overlays = import ./overlays {inherit inputs outputs;};
+    # overlays = import ./overlays {inherit inputs outputs;};
     formatter = forEachSystem (pkgs: pkgs.alejandra);
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
 
@@ -67,10 +72,12 @@
           home-manager.nixosModules.home-manager
           {_module.args = {inherit inputs;};}
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."${username}" = import ./hosts/nixos/home.nix;
-            home-manager.extraSpecialArgs = specialArgs;
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users."${username}" = import ./hosts/nixos/home.nix;
+              extraSpecialArgs = specialArgs;
+            };
           }
         ];
       };

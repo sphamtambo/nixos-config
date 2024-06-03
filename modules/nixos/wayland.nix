@@ -13,4 +13,8 @@
       pkgs.xdg-desktop-portal-gtk
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    libsForQt5.qt5.qtwayland
+  ];
 }
