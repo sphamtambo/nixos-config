@@ -58,10 +58,10 @@
       source = ../conf/mpd;
       recursive = true;
     };
-    "hypr/foot" = {
-      source = ../conf/foot;
-      recursive = true;
-    };
+    # "hypr/foot" = {
+    #   source = ../conf/foot;
+    #   recursive = true;
+    # };
     "hypr/wallpapers" = {
       source = ../conf/wallpapers;
       recursive = true;

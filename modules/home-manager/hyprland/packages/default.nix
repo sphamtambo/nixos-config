@@ -81,18 +81,4 @@
     # steam
     # steam-run
   ];
-
-  programs = {
-    # a wayland only terminal emulator
-    foot = {
-      enable = true;
-      server.enable = true;
-    };
-
-    # firefox = {
-    #   enable = true;
-    #   enableGnomeExtensions = false;
-    #   package = pkgs.firefox-wayland; # firefox with wayland support
-    # };
-  };
 }

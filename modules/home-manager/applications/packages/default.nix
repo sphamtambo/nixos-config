@@ -14,14 +14,19 @@
     docker
     docker-compose
     nodejs
-    python313
+    # python313
     less
     tree
     htop
     scrcpy
     libreoffice
+    ntfs3g
 
     pymol
+    jupyter
+    openbabel
+    parallel
+    mpi
 
     # cloudflare-warp
     # cloudflared
