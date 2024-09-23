@@ -27,6 +27,8 @@
     openbabel
     parallel
     mpi
+    python311Packages.numpy
+    meme-suite
 
     # cloudflare-warp
     # cloudflared
