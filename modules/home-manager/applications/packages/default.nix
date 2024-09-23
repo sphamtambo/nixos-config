@@ -28,6 +28,7 @@
     parallel
     mpi
     python311Packages.numpy
+    python311Packages.pandas
     meme-suite
 
     # cloudflare-warp
