@@ -29,7 +29,15 @@
     mpi
     python311Packages.numpy
     python311Packages.pandas
+
+    # bioinformatics tools
     meme-suite
+    fastqc
+    bwa
+    samtools
+    seqtk
+    gatk
+    R
 
     # cloudflare-warp
     # cloudflared
