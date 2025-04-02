@@ -23,6 +23,7 @@
       vi = "vi";
       vim = "nvim";
       nvimrc = "cd ~/.config/nvim/ && vim";
+      # orca = "~/Documents/DFT/orca/orca_6_0_1_linux_x86-64_shared_openmpi416";
       zshrc = "vim ~/.zshrc";
       grep = "grep --color=auto";
       fgrep = "fgrep --color=auto";

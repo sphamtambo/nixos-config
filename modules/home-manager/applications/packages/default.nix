@@ -22,15 +22,17 @@
     libreoffice
     ntfs3g
 
-    pymol
-    jupyter
-    openbabel
     parallel
     mpi
     python311Packages.numpy
     python311Packages.pandas
+    python311Packages.scipy
 
     # bioinformatics tools
+    avogadro2
+    pymol
+    jupyter
+    openbabel
     meme-suite
     fastqc
     bwa

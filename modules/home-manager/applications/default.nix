@@ -24,4 +24,5 @@
     ++ [(import ./yazi)]
     ++ [(import ./zathura)]
     ++ [(import ./zoxide)];
+  # ++ [(import ./cursor)];
 }
