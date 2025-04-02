@@ -14,9 +14,9 @@
       auto-optimise-store = true;
       experimental-features = ["nix-command" "flakes"];
     };
-    package = pkgs.nixFlakes;
+    nix.package = pkgs.nixVersions.stable;
     extraOptions =
-      lib.optionalString (config.nix.package == pkgs.nixFlakes)
+      lib.optionalString (config.nix.package == pkgs.nixVersions.stable)
       "experimental-features = nix-command flakes";
   };
 
