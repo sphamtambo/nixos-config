@@ -36,7 +36,7 @@
     nwg-look
     # cinnamon.nemo-with-extensions # file manager
     # xfce.thunar
-    gnome.nautilus
+    nautilus
     brightnessctl
     light
 
@@ -62,16 +62,16 @@
     qalculate-gtk # calculator
     xdg-utils
     killall
-    gnome.gnome-disk-utility
+    gnome-disk-utility
 
     ffmpeg
     mpv # video player
     # soundwireserver # pass audio to android phone
-    pamixer # pulseaudio command line mixer
-    pavucontrol # pulseaudio volume controle (GUI)
-    playerctl # controller for media players
-    alsa-utils # provides amixer/alsamixer/...
-    pamixer
+    # pamixer # pulseaudio command line mixer
+    # pavucontrol # pulseaudio volume controle (GUI)
+    # playerctl # controller for media players
+    # alsa-utils # provides amixer/alsamixer/...
+    # pamixer
     sox
     mpd # for playing system sounds
     mpc_cli # command-line mpd client

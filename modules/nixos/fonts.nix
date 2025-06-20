@@ -12,22 +12,16 @@
       font-awesome_4
       font-awesome_5
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       twemoji-color-font
       terminus_font
       nerd-font-patcher
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-          "Inconsolata"
-          "Hack"
-          "Meslo"
-          "DroidSansMono"
-          "FiraCode"
-          "JetBrainsMono"
-        ];
-      })
+      nerd-fonts.inconsolata
+      nerd-fonts.hack
+      # nerd-fonts.Meslo
+      # nerd-fonts.DroidSansMono
+      # nerd-fonts.JetBrainsMono
     ];
     fontconfig = {
       hinting.autohint = true;

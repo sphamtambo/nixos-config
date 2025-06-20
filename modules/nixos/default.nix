@@ -17,7 +17,7 @@
     ++ [(import ./bluetooth.nix)]
     ++ [(import ./virtualization.nix)]
     # ++ [(import ./flatpak.nix)]
-    ++ [(import ./../home-manager/programming_languages/mysql)]
+    # ++ [(import ./../home-manager/programming_languages/mysql)]
     ++ [(import ../../hosts/nixos/hardware-configuration.nix)];
   # ++ [ (import ./steam.nix) ]
 }

@@ -5,7 +5,7 @@
 }: {
   home = {
     packages = with pkgs; [
-      dbeaver
+      dbeaver-bin
     ];
   };
 }
