@@ -62,6 +62,9 @@
       egrep = "egrep --color=auto";
 
       open = "xdg-open";
+
+      ds2020 = "$HOME/sofwares/BIOVIA2020/DiscoveryStudio2020/bin/DiscoveryStudio2020";
+      mzmine = "$HOME/sofwares/bin/mzmine";
     };
 
     initExtra = ''
