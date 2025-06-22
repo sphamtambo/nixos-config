@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -98,6 +94,66 @@
       		bindkey "^N" insert-last-word
       		bindkey "^Q" push-line-or-edit
       		bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
+
+      # >>> conda initialize >>>
+      # !! Contents within this block are managed by 'conda init' !!
+        __conda_setup="$('$HOME/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__conda_setup"
+        else
+            if [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ]; then
+                . "$HOME/miniforge3/etc/profile.d/conda.sh"
+            else
+                export PATH="$HOME/miniforge3/bin:$PATH"
+            fi
+        fi
+        unset __conda_setup
+        if [ -f "$HOME/miniforge3/etc/profile.d/mamba.sh" ]; then
+            . "$HOME/miniforge3/etc/profile.d/mamba.sh"
+        fi
+      # <<< conda initialize <<<
+
+      # >>> mamba initialize >>>
+      # !! Contents within this block are managed by 'mamba shell init' !!
+        export MAMBA_EXE='$HOME/miniforge3/bin/mamba';
+        export MAMBA_ROOT_PREFIX='$HOME/miniforge3';
+        __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+        if [ $? -eq 0 ]; then
+            eval "$__mamba_setup"
+        else
+            export PATH="$MAMBA_ROOT_PREFIX/bin:$PATH"
+        fi
+        unset __mamba_setup
+
+      # <<< mamba initialize <<<
+
+      # Source MGLtools
+      source /home/sphalo/sofwares/mgltools/initMGLtools.sh
+
+      export PATH="$HOME/.local/bin":$PATH
+      export PATH="$HOME/bin":$PATH
+
+      # clang 12 directory to the path variable
+      export PATH=/usr/lib/llvm-16/bin:$PATH
+      export PATH="/usr/bin:/usr/local/bin:$PATH"
+      export PATH="/usr/bin:/usr/local/bin:/usr/local/clang-16/bin:$PATH"
+      export PATH="/usr/bin:$PATH"
+
+      # mysql
+      export PATH="/usr/local/mysql/bin:$PATH"
+
+      # mysql workbench
+      export PATH=$PATH:/snap/bin
+
+      # Chimera
+      export PATH="$PATH:$HOME/.local/UCSF-Chimera64-1.17.3/bin:$PATH"
+
+      # DiscoveryStudio2020
+      export PATH="$HOME/sofwares/BIOVIA2020/DiscoveryStudio2020/bin:$PATH"
+      export LD_LIBRARY_PATH="$HOME/sofwares/BIOVIA2020/LicensePack/linux/lib:$LD_LIBRARY_PATH"
+
+      # sirius
+      export PATH="$HOME/opt/sirius/sirius/bin:$PATH"
     '';
     plugins = [
       {

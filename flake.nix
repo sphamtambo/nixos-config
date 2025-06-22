@@ -41,31 +41,18 @@
 
     forEachSystem = nixpkgs.lib.genAttrs systems;
 
- #    pkgsFor = import forEachSystem {system:
-	#   import nixpkgs {
- #      inherit systems;
- #      config = {
- #        allowUnfree = true;
- #      };
- #      overlays = [
- #        (final: prev: {
- #          neovim = inputs.nixvimed.packages.${systems}.default;
- #        })
- #      ];
- #    }
-	# };
-	pkgsFor = forEachSystem (system:
-	  import nixpkgs {
-		inherit system;
-		config.allowUnfree = true;
-		overlays = [
-		  (final: prev: {
-			neovim = inputs.nixvimed.packages.${system}.default;
-		  })
-		];
-	  }
-	);
-
+    pkgsFor = forEachSystem (
+      system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            (final: prev: {
+              neovim = inputs.nixvimed.packages.${system}.default;
+            })
+          ];
+        }
+    );
   in {
     templates = import ./templates;
     homeManagerModules = import ./modules/home-manager;
@@ -98,7 +85,7 @@
     };
 
     # Only used for non nixos systems (Standalone home-manager)
-    # 'home-manager --flake .#username'
+    # 'home-manager --flake .#username switch'
     homeConfigurations = {
       "${username}" = home-manager.lib.homeManagerConfiguration {
         pkgs = pkgsFor.x86_64-linux;
