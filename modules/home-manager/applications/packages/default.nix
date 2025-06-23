@@ -29,8 +29,8 @@
     python311Packages.scipy
 
     # bioinformatics tools
-    avogadro2
-    pymol
+    # avogadro2
+    # pymol
     jupyter
     openbabel
     meme-suite

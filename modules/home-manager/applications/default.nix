@@ -6,10 +6,10 @@
   imports =
     [(import ./btop)]
     ++ [(import ./packages)]
-    ++ [(import ./alacritty)]
+    # ++ [(import ./alacritty)]
     ++ [(import ./firefox)]
-    ++ [(import ./foot)]
-    ++ [(import ./kitty)]
+    # ++ [(import ./foot)]
+    # ++ [(import ./kitty)]
     ++ [(import ./zsh)]
     ++ [(import ./bash)]
     ++ [(import ./fzf)]
@@ -24,5 +24,4 @@
     ++ [(import ./yazi)]
     ++ [(import ./zathura)]
     ++ [(import ./zoxide)];
-  # ++ [(import ./cursor)];
 }
