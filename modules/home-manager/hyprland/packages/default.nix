@@ -2,43 +2,44 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     xclip
     wl-clipboard
     cliphist
 
-    tenacity
+    # tenacity
 
-    bluez
+    # bluez
     # bluez-alsa
-    # blueman
+    blueman
     # bluez-tools
 
     direnv
     networkmanagerapplet
     networkmanager
-    libnotify
     swaynotificationcenter
-    mako
-    waybar
-    wlogout
-    swayidle
-    swaybg
-    swaylock
-    wofi
+    # mako
+    # swayidle
+    # swaybg
+    # swaylock
+    # wofi
     wlroots
-    xfce.xfce4-appfinder
+    # xfce.xfce4-appfinder
     slurp
     grim
     inputs.hypr-contrib.packages.${pkgs.system}.grimblast
     imv # image viewer
     nwg-look
-    # cinnamon.nemo-with-extensions # file manager
-    # xfce.thunar
-    nautilus
+    xfce.thunar
+    nemo
     brightnessctl
     light
+    fuzzel
+    qt5.qtwayland
+    qt6.qtwayland
+    xwayland
 
     # lxde.lxsession
     # cinnamon.mint-themes
@@ -66,12 +67,14 @@
 
     ffmpeg
     mpv # video player
-    # soundwireserver # pass audio to android phone
-    # pamixer # pulseaudio command line mixer
-    # pavucontrol # pulseaudio volume controle (GUI)
-    # playerctl # controller for media players
-    # alsa-utils # provides amixer/alsamixer/...
-    # pamixer
+    soundwireserver # pass audio to android phone
+    pamixer # pulseaudio command line mixer
+    pavucontrol # pulseaudio volume controle (GUI)
+    # pipewire
+    wireplumber
+    playerctl # controller for media players
+    alsa-utils # provides amixer/alsamixer/...
+    # pulseaudio
     sox
     mpd # for playing system sounds
     mpc_cli # command-line mpd client
@@ -81,4 +84,5 @@
     # steam
     # steam-run
   ];
+
 }

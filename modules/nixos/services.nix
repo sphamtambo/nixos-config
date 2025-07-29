@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   services = {
     devmon.enable = true;
     udisks2 = {
@@ -9,4 +10,8 @@
     gnome.gnome-keyring.enable = true;
     dbus.enable = true;
   };
+  services.xserver.videoDrivers = [
+    "nvidia"
+    "modesetting"
+  ];
 }

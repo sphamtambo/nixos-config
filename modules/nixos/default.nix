@@ -13,7 +13,7 @@
     ++ [(import ./wayland.nix)]
     ++ [(import ./fonts.nix)]
     ++ [(import ./ssh.nix)]
-    ++ [(import ./cloudflare-warp.nix)]
+    # ++ [(import ./cloudflare-warp.nix)]
     ++ [(import ./bluetooth.nix)]
     ++ [(import ./virtualization.nix)]
     # ++ [(import ./flatpak.nix)]

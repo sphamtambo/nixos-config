@@ -1,7 +1,8 @@
-{username, ...}: {
-  imports =
-    [(import ../../modules/home-manager/applications)]
-    ++ [(import ../../modules/home-manager/hyprland)];
+{ username, ... }:
+{
+  imports = [
+    (import ../../modules/home-manager/applications)
+  ] ++ [ (import ../../modules/home-manager/hyprland) ];
 
   home = {
     username = "${username}";

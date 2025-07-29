@@ -1,16 +1,18 @@
-{pkgs, ...}: {
+{ config, pkgs, ... }:
+
+let
+  catppuccinFlavor = "macchiato";
+in
+{
   services.displayManager.sddm = {
     enable = true;
-    theme = "catppuccin-sddm-corners";
     wayland.enable = true;
+    theme = "catppuccin-${catppuccinFlavor}";
   };
 
   environment.systemPackages = with pkgs; [
-    catppuccin-sddm-corners
-    libsForQt5.qt5.qtsvg
-    libsForQt5.qt5.qtgraphicaleffects
-    libsForQt5.qt5.qtquickcontrols2
+    (pkgs.catppuccin-sddm.override {
+      flavor = catppuccinFlavor;
+    })
   ];
-  # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
 }

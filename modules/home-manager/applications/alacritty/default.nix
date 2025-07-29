@@ -1,24 +1,25 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.alacritty = {
     enable = true;
 
     settings = {
       font = {
-        size = 10;
+        size = 13;
         normal = {
-          family = "JetBrainsMono NF";
+          family = "JetBrainsMono Nerd Font";
           style = "Regular";
         };
         italic = {
-          family = "JetBrainsMono NF";
+          family = "JetBrainsMono Nerd Font";
           style = "Italic";
         };
         bold_italic = {
-          family = "JetBrainsMono NF";
+          family = "JetBrainsMono Nerd Font";
           style = "Bold Italic";
         };
         bold = {
-          family = "JetBrainsMono NF";
+          family = "JetBrainsMono Nerd Font";
           style = "Bold";
         };
       };
